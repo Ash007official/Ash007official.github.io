@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Missing Poster</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Anton&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="missing.css">
+</head>
+<body>
+
+<div class="poster">
+
+    <!-- ONLY ONE HELP ME BUTTON -->
+    <button id="helpBtn" class="help-button">HELP ME</button>
+
+    <div class="top-text">
+        <p class="have-you">HAVE YOU SEEN THIS PERSON?</p>
+        <h1 class="missing">MISSING</h1>
+    </div>
+
+    <div class="content">
+        <img src="missing.png" class="person-img" id="missingPhoto">
+    </div>
+
+    <div class="bottom">
+        <div class="left">
+            <h2>IZZAH MARIYAM</h2>
+            <p class="role">2nd Year BA Design Student</p>
+
+            <div class="last-seen">
+                <p>LAST SEEN</p>
+                <span>19 NOV 2025</span>
+            </div>
+        </div>
+
+        <div class="right">
+            <p class="info">
+                If You Have Any Information<br>
+                on this Person
+            </p>
+            <p class="call">Please Call</p>
+            <h3 class="number">9746842175</h3>
+        </div>
+    </div>
+
+</div>
+
+<div id="popup">
+    <div class="popup-content">
+        <p>Please find me as soon as possible</p>
+        <button id="closePopup">OK</button>
+    </div>
+</div>
+
+<audio id="heartbeatSound" src="heartbeat.mp3"></audio>
+
+<script>
+    const helpBtn = document.getElementById("helpBtn");
+    const popup = document.getElementById("popup");
+    const closeBtn = document.getElementById("closePopup");
+    const heartbeatSound = document.getElementById("heartbeatSound");
+
+    helpBtn.addEventListener("click", () => {
+        popup.style.display = "flex";
+        heartbeatSound.currentTime = 0;
+        heartbeatSound.play();
+    });
+
+    closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+        heartbeatSound.pause();
+    });
+</script>
+
+</body>
+</html>
